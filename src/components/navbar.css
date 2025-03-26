@@ -1,0 +1,139 @@
+/* Navbar Styling */
+.navbar {
+    background:linear-gradient(90deg, rgb(0, 0, 0), rgb(26, 0, 50));
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.logomaker{
+    font-size: 30px;
+    margin: 15px;
+}
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Dropdown Styling */
+.dropdown span {
+    cursor: pointer;
+    padding: 8px 12px;
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background: #444;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    display: none;
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background: #555;
+}
+
+/* Login Button */
+.login-btn {
+    background: #3a3a3a;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+    background: #e65c00;
+}
+
+/* Mobile Menu */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        color: white;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        background: #333;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+    }
+
+    .nav-links.open {
+        height: 300px;
+        padding: 20px 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        background: none;
+        width: 100%;
+        display: block;
+    }
+}

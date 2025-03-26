@@ -25,7 +25,7 @@ export default function Footer() {
         {/* Right Section - Social Media */}
         <div className="footer-social">
           <h3>Follow Us</h3>
-          <div className="social-media">
+          <div className="social-media center">
             <a href="https://www.facebook.com/" className="fa-brands fa-facebook"> </a>
             <a href="https://www.linkedin.com/" className="fa-brands fa-linkedin"> </a>
             <a href="https://github.com/" className="fa-brands fa-github"> </a>

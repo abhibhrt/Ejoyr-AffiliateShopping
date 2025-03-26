@@ -99,10 +99,11 @@
       text-align: center;
       gap: 20px;
     }
-  
+    
     .footer-about,
     .footer-links,
     .footer-social {
+      width: 100%;
       text-align: center;
     }
   

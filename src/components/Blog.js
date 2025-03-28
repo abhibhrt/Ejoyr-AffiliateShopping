@@ -7,21 +7,21 @@ const products = [
     name: "Smart Watch Pro X",
     description: "Stay ahead with the latest Smart Watch featuring health tracking, notifications, and a sleek design.",
     image: "https://hammeronline.in/cdn/shop/files/Hammerglidebluetoothcallingsmartwatch_1.webp?v=1694851875",
-    price: "$199",
+    price: "₹199",
   },
   {
     id: 2,
     name: "Men's Leather Jacket",
     description: "A stylish, durable, and comfortable leather jacket for the modern man. Perfect for any occasion.",
     image: "https://images.pexels.com/photos/849835/pexels-photo-849835.jpeg",
-    price: "$149",
+    price: "₹149",
   },
   {
     id: 3,
     name: "Wireless Earbuds 2.0",
     description: "Crystal-clear sound, noise cancellation, and all-day battery life. The best companion for your music.",
     image: "https://images.pexels.com/photos/3394651/pexels-photo-3394651.jpeg",
-    price: "$99",
+    price: "₹99",
   },
 ];
 

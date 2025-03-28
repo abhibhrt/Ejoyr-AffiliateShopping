@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import {Link} from 'react-router-dom'
 import './home.css'
 
 export default function Home(props) {
@@ -24,7 +25,7 @@ export default function Home(props) {
             <a href="https://github.com/abhishekbharti2" className="fa-brands fa-github"> </a>
             <a href="https://x.com/AD_Jack9?t=9DGN-8JDwo4rVMXtPKXpUA&s=08" className='fa-brands fa-x-twitter'> </a>
           </div>
-          <button className="stylish-btn">Explore &#8594;</button>
+          <Link to={"/products"} className="stylish-btn">Explore &#8594;</Link>
         </div>
         <div className="home-right">
           <img src={props.image} id="right-image" className="home-right-image" alt="Product Display" />

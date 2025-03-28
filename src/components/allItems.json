@@ -1,0 +1,442 @@
+[
+  {
+    "id": "elchctw7btwke8",
+    "name": "Sony WH-1000XM4 Wireless Headphones",
+    "category": "electronics",
+    "subCategory": "audio",
+    "brand": "Sony",
+    "sku": "SONY-WHXM4-2023",
+    "price": 349.99,
+    "discount": 12,
+    "inStock": true,
+    "rating": 4.8,
+    "reviewCount": 1245,
+    "colors": ["black", "silver"],
+    "shortDescription": "Industry-leading noise cancellation with 30-hour battery life.",
+    "longDescription": "The Sony WH-1000XM4 wireless headphones feature Dual Noise Sensor technology for unprecedented noise cancellation...",
+    "features": [
+      "Adaptive Sound Control",
+      "Touch sensor controls",
+      "HD Noise Canceling Processor QN1"
+    ],
+    "specifications": [
+      {
+        "name": "Battery Life",
+        "value": "30 hours"
+      },
+      {
+        "name": "Bluetooth Version",
+        "value": "5.0"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/61CqYq+xwNL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "James Wilson",
+        "rating": 5,
+        "date": "2023-06-15",
+        "title": "Best ANC headphones period",
+        "content": "The noise cancellation is magical on flights..."
+      }
+    ]
+  },
+  {
+    "id": "phnx4567btwke9",
+    "name": "iPhone 13 Pro",
+    "category": "electronics",
+    "subCategory": "mobile",
+    "brand": "Apple",
+    "sku": "APL-IP13P-2023",
+    "price": 999.00,
+    "discount": 8,
+    "inStock": true,
+    "rating": 4.7,
+    "reviewCount": 3421,
+    "colors": ["graphite", "gold", "sierra blue"],
+    "shortDescription": "Pro camera system with 6.1-inch Super Retina XDR display.",
+    "longDescription": "The iPhone 13 Pro features a transformative triple-camera system with Night mode on all cameras...",
+    "features": [
+      "A15 Bionic chip",
+      "ProMotion technology",
+      "Cinematic mode"
+    ],
+    "specifications": [
+      {
+        "name": "Storage",
+        "value": "128GB"
+      },
+      {
+        "name": "Display",
+        "value": "6.1-inch OLED"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/61sDyXAepuL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71GLMJ7TQiL._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "Sarah Kim",
+        "rating": 5,
+        "date": "2023-07-20",
+        "title": "Worth every penny",
+        "content": "The battery life improvement over my XS is incredible..."
+      }
+    ]
+  },
+  {
+    "id": "lptp7890btwke1",
+    "name": "MacBook Pro 14-inch",
+    "category": "electronics",
+    "subCategory": "computers",
+    "brand": "Apple",
+    "sku": "APL-MBP14-2023",
+    "price": 1999.00,
+    "discount": 5,
+    "inStock": true,
+    "rating": 4.9,
+    "reviewCount": 876,
+    "colors": ["space gray", "silver"],
+    "shortDescription": "Supercharged for pros with M1 Pro or M1 Max chip.",
+    "longDescription": "The MacBook Pro 14-inch delivers game-changing performance with its M1 Pro or M1 Max chip...",
+    "features": [
+      "Liquid Retina XDR display",
+      "1080p FaceTime HD camera",
+      "Six-speaker sound system"
+    ],
+    "specifications": [
+      {
+        "name": "Processor",
+        "value": "M1 Pro 8-core"
+      },
+      {
+        "name": "Memory",
+        "value": "16GB unified"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/61vFO3R5UNL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71TPda7cwUL._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "Michael Chen",
+        "rating": 5,
+        "date": "2023-08-10",
+        "title": "Powerhouse machine",
+        "content": "Compiles code twice as fast as my Intel MacBook Pro..."
+      }
+    ]
+  },
+  {
+    "id": "smrtw7890btwke2",
+    "name": "Apple Watch Series 8",
+    "category": "electronics",
+    "subCategory": "wearables",
+    "brand": "Apple",
+    "sku": "APL-AW8-2023",
+    "price": 429.00,
+    "discount": 0,
+    "inStock": true,
+    "rating": 4.6,
+    "reviewCount": 1567,
+    "colors": ["midnight", "starlight", "product red"],
+    "shortDescription": "Advanced health metrics with always-on Retina display.",
+    "longDescription": "The Apple Watch Series 8 features temperature sensing for women's health...",
+    "features": [
+      "Crash Detection",
+      "ECG app",
+      "Blood oxygen sensor"
+    ],
+    "specifications": [
+      {
+        "name": "Case Size",
+        "value": "45mm"
+      },
+      {
+        "name": "Water Resistance",
+        "value": "50 meters"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/71XW2lx6HIL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71fWB+n6OIL._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "Emily Rodriguez",
+        "rating": 4,
+        "date": "2023-09-05",
+        "title": "Great health companion",
+        "content": "The sleep tracking is incredibly accurate..."
+      }
+    ]
+  },
+  {
+    "id": "tvplm7890btwke3",
+    "name": "Samsung QN90B Neo QLED TV",
+    "category": "electronics",
+    "subCategory": "televisions",
+    "brand": "Samsung",
+    "sku": "SMS-QN90B-2023",
+    "price": 1799.99,
+    "discount": 15,
+    "inStock": true,
+    "rating": 4.7,
+    "reviewCount": 432,
+    "colors": ["black"],
+    "shortDescription": "4K Neo QLED with Quantum HDR 32x and Dolby Atmos.",
+    "longDescription": "The Samsung QN90B Neo QLED TV features Quantum Matrix Technology with Mini LEDs...",
+    "features": [
+      "Neo Quantum Processor 4K",
+      "Object Tracking Sound+",
+      "Slim One Connect Design"
+    ],
+    "specifications": [
+      {
+        "name": "Screen Size",
+        "value": "55-inch"
+      },
+      {
+        "name": "Refresh Rate",
+        "value": "120Hz"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/71vZypjNkPS._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/81+R2ziTq3L._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "David Park",
+        "rating": 5,
+        "date": "2023-10-12",
+        "title": "Picture quality is stunning",
+        "content": "The blacks are truly black and colors pop..."
+      }
+    ]
+  },
+  {
+    "id": "tblt7890btwke4",
+    "name": "Samsung Galaxy Tab S8 Ultra",
+    "category": "electronics",
+    "subCategory": "tablets",
+    "brand": "Samsung",
+    "sku": "SMS-TABS8U-2023",
+    "price": 1099.99,
+    "discount": 10,
+    "inStock": true,
+    "rating": 4.5,
+    "reviewCount": 287,
+    "colors": ["graphite", "silver"],
+    "shortDescription": "14.6-inch AMOLED tablet with S Pen included.",
+    "longDescription": "The Galaxy Tab S8 Ultra features our largest, most immersive tablet display yet...",
+    "features": [
+      "Super AMOLED display",
+      "Under-display front camera",
+      "45W fast charging"
+    ],
+    "specifications": [
+      {
+        "name": "RAM",
+        "value": "12GB"
+      },
+      {
+        "name": "Storage",
+        "value": "256GB"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/81v2B3PkOVS._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KCwNV6MuL._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "Lisa Thompson",
+        "rating": 4,
+        "date": "2023-11-08",
+        "title": "Perfect for digital artists",
+        "content": "The S Pen feels just like drawing on paper..."
+      }
+    ]
+  },
+  {
+    "id": "sprk7890btwke5",
+    "name": "Bose QuietComfort 45 Headphones",
+    "category": "electronics",
+    "subCategory": "audio",
+    "brand": "Bose",
+    "sku": "BOSE-QC45-2023",
+    "price": 329.00,
+    "discount": 8,
+    "inStock": true,
+    "rating": 4.6,
+    "reviewCount": 892,
+    "colors": ["black", "blue"],
+    "shortDescription": "Premium noise cancelling headphones with 24-hour battery.",
+    "longDescription": "The Bose QuietComfort 45 headphones feature Acoustic Noise Cancelling technology...",
+    "features": [
+      "Triple-mic system",
+      "Aware mode",
+      "Quiet and Aware modes"
+    ],
+    "specifications": [
+      {
+        "name": "Battery Life",
+        "value": "24 hours"
+      },
+      {
+        "name": "Weight",
+        "value": "8.5 oz"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/51A+j6SpYML._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71Q8gRzC3JL._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "Robert Johnson",
+        "rating": 5,
+        "date": "2023-12-15",
+        "title": "Best for frequent travelers",
+        "content": "Blocks airplane noise better than any other headphones..."
+      }
+    ]
+  },
+  {
+    "id": "drn7890btwke6",
+    "name": "Canon EOS R5 Mirrorless Camera",
+    "category": "electronics",
+    "subCategory": "photography",
+    "brand": "Canon",
+    "sku": "CAN-R5-2023",
+    "price": 3899.00,
+    "discount": 5,
+    "inStock": true,
+    "rating": 4.8,
+    "reviewCount": 156,
+    "colors": ["black"],
+    "shortDescription": "45MP full-frame mirrorless camera with 8K video.",
+    "longDescription": "The EOS R5 combines high-resolution stills and 8K video recording in one compact body...",
+    "features": [
+      "In-body image stabilization",
+      "Dual Pixel CMOS AF II",
+      "20fps electronic shutter"
+    ],
+    "specifications": [
+      {
+        "name": "Sensor",
+        "value": "45MP Full Frame"
+      },
+      {
+        "name": "Video Resolution",
+        "value": "8K RAW"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/71+XsWhqVVL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71EkeWjJtBL._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "Amanda Lee",
+        "rating": 5,
+        "date": "2024-01-10",
+        "title": "Professional-grade performance",
+        "content": "The autofocus tracks eyes better than my DSLR..."
+      }
+    ]
+  },
+  {
+    "id": "gmn7890btwke7",
+    "name": "Logitech MX Keys Advanced Keyboard",
+    "category": "electronics",
+    "subCategory": "computers",
+    "brand": "Logitech",
+    "sku": "LOG-MXKEYS-2023",
+    "price": 99.99,
+    "discount": 10,
+    "inStock": true,
+    "rating": 4.7,
+    "reviewCount": 1243,
+    "colors": ["black", "pale gray"],
+    "shortDescription": "Perfect stroke keys with smart backlighting.",
+    "longDescription": "MX Keys combines perfectly sculpted, backlit keys with fluid typing experience...",
+    "features": [
+      "Smart illumination",
+      "Multi-device pairing",
+      "USB-C rechargeable"
+    ],
+    "specifications": [
+      {
+        "name": "Connectivity",
+        "value": "Bluetooth/Unifying"
+      },
+      {
+        "name": "Battery Life",
+        "value": "10 days"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/61gS1y+3MKL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/61CPf8WODFL._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "Thomas Wilson",
+        "rating": 5,
+        "date": "2024-02-18",
+        "title": "Best keyboard for productivity",
+        "content": "The key travel is perfect for long typing sessions..."
+      }
+    ]
+  },
+  {
+    "id": "ext7890btwke8",
+    "name": "Samsung T7 Shield Portable SSD",
+    "category": "electronics",
+    "subCategory": "storage",
+    "brand": "Samsung",
+    "sku": "SMS-T7S-2023",
+    "price": 129.99,
+    "discount": 12,
+    "inStock": true,
+    "rating": 4.8,
+    "reviewCount": 876,
+    "colors": ["black", "blue"],
+    "shortDescription": "Water/dust resistant portable SSD with 1050MB/s speeds.",
+    "longDescription": "The T7 Shield offers rugged durability with IP65 rating while maintaining fast transfer speeds...",
+    "features": [
+      "IP65 water/dust resistance",
+      "3m drop protection",
+      "Password protection"
+    ],
+    "specifications": [
+      {
+        "name": "Capacity",
+        "value": "1TB"
+      },
+      {
+        "name": "Speed",
+        "value": "1050MB/s read"
+      }
+    ],
+    "images": [
+      "https://m.media-amazon.com/images/I/81+Q0VZibJL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71h2r3oeY5L._AC_SL1500_.jpg"
+    ],
+    "reviews": [
+      {
+        "author": "Nathan Chen",
+        "rating": 5,
+        "date": "2024-03-05",
+        "title": "Survived my hiking trip",
+        "content": "Got caught in rain but the drive works perfectly..."
+      }
+    ]
+  }
+]

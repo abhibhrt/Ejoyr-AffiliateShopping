@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './product.css';
-import product from './product.json'
+import allItems from './allItems.json'
+import { useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
+  const {idnumber} = useParams()
+  const [product, setProduct] = useState(allItems[0])
   const [selectedImage, setSelectedImage] = useState(product.images);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('description');
+  console.log(idnumber)
+
+  useEffect(() => {
+    if (idnumber && allItems) {
+      const foundProduct = allItems.find(item => item.id === idnumber);
+      setProduct(foundProduct); 
+      setSelectedImage(foundProduct.images[0])
+      // setActiveTab()
+    }
+  }, [idnumber]);
 
   const handleQuantityChange = (e) => {
     const value = parseInt(e.target.value);
     if (value > 0 && value <= 10) {
-      setQuantity(value); 
+      setQuantity(value);
     }
   };
 
@@ -77,12 +90,12 @@ const ProductDetails = () => {
           <div className="price-section">
             {product.discount > 0 && (
               <>
-                <span className="original-price">${product.price.toFixed(2)}</span>
+                <span className="original-price">₹{product.price.toFixed(2)}</span>
                 <span className="discount-percent">-{product.discount}%</span>
               </>
             )}
             <div className="current-price">
-              ${calculateDiscountedPrice().toFixed(2)}
+            ₹{calculateDiscountedPrice().toFixed(2)}
             </div>
           </div>
 
@@ -94,7 +107,7 @@ const ProductDetails = () => {
             <div className="quantity-selector">
               <button onClick={decrementQuantity}>-</button>
               <input 
-                type="number" 
+                type="text" 
                 min="1" 
                 max="10" 
                 value={quantity} 

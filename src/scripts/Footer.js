@@ -1,8 +1,8 @@
 import React from "react";
-import "./footer.css";
+import "../styles/footer.css";
 
 export default function Footer() {
-  return (
+  return ( 
     <footer className="footer">
       <div className="footer-container">
         {/* Left Section - About */}

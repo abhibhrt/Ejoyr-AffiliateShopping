@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./navbar.css";
+import "../styles/navbar.css";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [categoryOpen, setCategoryOpen] = useState(false);
-  const [transactionOpen, setTransactionOpen] = useState(false);
   const navRef = useRef(null);
 
   // Close dropdowns when clicking outside
@@ -12,7 +12,6 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setCategoryOpen(false);
-        setTransactionOpen(false);
       }
     };
 
@@ -35,6 +34,7 @@ const Navbar = () => {
   }, []);
 
   return (
+    <>
     <nav className="navbar" ref={navRef}>
       <div className="nav-container">
         <h1 className="logo">Ejoyr</h1>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <li><a href="/cart" className="nav-link">Your Cart</a></li>
+          <li><NavLink to="/" className="nav-link">Home</NavLink></li>
 
           {/* Category Dropdown */}
           <li className="dropdown">
@@ -72,37 +72,17 @@ const Navbar = () => {
               <li><a href="#home">Home Decor</a></li>
             </ul>
           </li>
-
-          {/* Transaction Dropdown */}
-          <li className="dropdown">
-            <div 
-              className="dropdown-toggle"
-              onClick={() => setTransactionOpen(!transactionOpen)}
-            >
-              <span>Transactions</span>
-              <svg className={`chevron ${transactionOpen ? "open" : ""}`} viewBox="0 0 24 24">
-                <path d="M7 10l5 5 5-5z" />
-              </svg>
-            </div>
-            <ul className={`dropdown-menu ${transactionOpen ? "show" : ""}`}>
-              <li><a href="/transaction">Order History</a></li>
-              <li><a href="/transaction#refund">Refund Status</a></li>
-              <li><a href="/transaction#track">Track Order</a></li>
-            </ul>
-          </li>
-
-          <li><a href="#contact" className="nav-link">Contact Us</a></li>
+          <li><NavLink className='nav-link' to='/products'>Collections</NavLink></li>
           <li>
-            <a href="/login" className="login-btn">
-              <span>Login</span>
-              <svg viewBox="0 0 24 24" width="18" height="18">
-                <path d="M20 12l-6-6v5H6v2h8v5z" />
-              </svg>
-            </a>
+            <NavLink to="/adminpanel" className="nav-link">
+              Admin
+            </NavLink>
           </li>
         </ul>
       </div>
     </nav>
+    <div className="forspace">.</div>
+    </>
   );
 };
 

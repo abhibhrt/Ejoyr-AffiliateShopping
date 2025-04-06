@@ -1,6 +1,6 @@
 /* Base Styles */
 :root {
-    --primary-color: #00b3c3;
+    --primary-color: #1fffff;
     --primary-dark: #564fd8;
     --text-color: #ffffff;
     --text-light: #d6d6d6;
@@ -24,6 +24,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: fixed;
     width: 100vw;
+  }
+
+  .forspace{
+    height: 60px;
   }
   
   .nav-container {
@@ -64,6 +68,10 @@
     transition: var(--transition);
   }
   
+  a.active{
+    color: var(--primary-color);
+  }
+
   .nav-link:hover {
     color: var(--primary-color);
   }
@@ -152,26 +160,7 @@
     color: var(--primary-color);
     padding-left: 1.2rem;
   }
-  
-  /* Login Button */
-  .login-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-  }
-  
-  .login-btn:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(108, 99, 255, 0.3);
-  }
+
   
   .login-btn svg {
     fill: white;

@@ -1,41 +1,48 @@
 import './App.css';
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Navbar from './components/Navbar';
-import Blog from './components/Blog';
-import Footer from './components/Footer';
-import Categories from './components/Category';
-import Product from './components/Product';
-import ProductsPage from './components/ProductPage';
-
-const HomePage = ({ object, setLoading }) => {
-  return (
-    <>
-      <Home image={object.image} title={object.title} setLoading={setLoading} />
-      <Blog />
-      <Categories />
-    </>
-  );
-};
+import { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
+import Home from './scripts/Home';
+import Navbar from './scripts/Navbar';
+import Footer from './scripts/Footer';
+import Product from './scripts/selectedProduct';
+import ProductPage from './scripts/AllProducts';
+import AdminPanel from './scripts/AdminPanel';
+import ScrollToTop from './scripts/scrollToTop'; // 👈 Import it
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [products, setProducts] = useState([]);
 
-  const object = {
-    image: "https://images-eu.ssl-images-amazon.com/images/G/31/img21/MA2023/SS23/MFD_june/men.gif",
-    title: "Winter Collection"
-  };
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const fet = await fetch(`${process.env.REACT_APP_API}/api/products`);
+        setProducts(await fet.json());
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, []);
 
   return (
     <Router>
+      <ScrollToTop /> {/* 👈 Add here */}
       <div className="body-container">
-        {loading && <div className="loading flex-row center"><span className="loader"></span></div>}
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage object={object} setLoading={setLoading} />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/product/:idnumber" element={<Product />} />
+          <Route
+            path="/"
+            element={
+              <Home products={products.sort(() => 0.5 - Math.random()).slice(0, 3)} />
+            }
+          />
+          <Route path="/products" element={<ProductPage products={products} />} />
+          <Route path="/products/:productId" element={<Product />} />
+          <Route path="/adminpanel" element={<AdminPanel />} />
         </Routes>
         <Footer />
       </div>

@@ -104,22 +104,20 @@ const SelectedProduct = () => {
               <span>{quantity}</span>
               <button 
                 onClick={() => setQuantity(prev => prev + 1)}
-                disabled={product.stock > 0 && quantity >= product.stock}
-              >
+                disabled={product.stock > 0 && quantity >= product.stock}>
                 +
               </button>
             </div>
             
-            <button 
-              className="product-detail-add-to-cart"
-              disabled={product.stock <= 0}
-            >
-              {product.stock > 0 ? 'Add to Cart' : 'Notify Me'}
-            </button>
+            <a href='https://www.meesho.com/?srsltid=AfmBOop3uf9yk5LeZwaSwMECdsU_E1xmWwk2ailoWm7GdhMsfBYGQjn-'
+               className="product-detail-add-to-cart"
+               disabled={product.stock <= 0}>
+              {product.stock > 0 ? 'Buy Now' : 'Notify Me'}
+            </a>
             
-            <button className="product-detail-wishlist">
+            {/* <button className="product-detail-wishlist">
               ♡ Add to Wishlist
-            </button>
+            </button> */}
           </div>
 
           <div className="product-detail-meta-footer">

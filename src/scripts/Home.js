@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import '../styles/home.css'
 
-export default function Home({products}) {
- 
+export default function Home({ products }) {
+
 
   const categories = [
     { name: "Electronics", image: "https://t4.ftcdn.net/jpg/03/64/41/07/360_F_364410756_Ev3WoDfNyxO9c9n4tYIsU5YBQWAP3UF8.jpg" },
@@ -44,10 +44,10 @@ export default function Home({products}) {
               <img src={product.images[0]} alt={product.title} className="fet-product-image" />
               <div className="fet-product-info">
                 <h3>{product.title}</h3>
-                <p>{product.description}</p>
+                <p>{product.description.slice(0, 50)}...</p>
                 <span className="fet-price">₹{product.price * (1 - (product.discount || 0) / 100)}</span>
-                <NavLink to={`/products/${product.id}`} state={{product}} className="fet-buy-now">Buy Now</NavLink>
               </div>
+              <NavLink to={`/products/${product.id}`} state={{ product }} className="fet-buy-now">Buy Now</NavLink>
             </div>
           ))}
         </div>

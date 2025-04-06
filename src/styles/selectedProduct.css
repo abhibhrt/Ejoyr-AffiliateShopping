@@ -219,6 +219,7 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   overflow: hidden;
+  justify-content: center;
 }
 
 .product-detail-quantity button {
@@ -247,14 +248,16 @@
 .product-detail-add-to-cart {
   flex: 1;
   min-width: 200px;
-  height: 40px;
-  background: #6e8efb;
+  padding: 10px;
+  background: #317700;
   color: white;
   border: none;
   border-radius: 4px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s;
+  text-align: center;
+  text-decoration: none;
 }
 
 .product-detail-add-to-cart:hover {

@@ -65,10 +65,8 @@ const Navbar = () => {
               </svg>
             </div>
             <ul className={`dropdown-menu ${categoryOpen ? "show" : ""}`}>
-              <li><a href="#men">Men's Fashion</a></li>
-              <li><a href="#women">Women's Fashion</a></li>
+              <li><a href="#men">Fashion</a></li>
               <li><a href="#electronics">Electronics</a></li>
-              <li><a href="#kids">Kids & Toys</a></li>
               <li><a href="#home">Home Decor</a></li>
             </ul>
           </li>

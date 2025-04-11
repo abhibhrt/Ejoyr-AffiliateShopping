@@ -18,13 +18,33 @@ const AdminPanel = () => {
     stock: null,
     rating: null,
     ratingCount: null,
+    affiliate: null,
     images: ['', '', '']
   });
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [done, setDone] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [showPasswordField, setShowPasswordField] = useState(true);
 
-  // Fetch all products
+  // Password for frontend protection (not secure for production)
+  const ADMIN_PASSWORD = 'Bharti%2025'; // Change this to your desired password
+
+  // Categories
+  const categories = ['Electronics', 'Home Decor', 'Fashion', 'Other'];
+
+  // Handle password submission
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    if (password === ADMIN_PASSWORD) {
+      setIsAuthenticated(true);
+      setShowPasswordField(false);
+    } else {
+      setError('Incorrect password');
+    }
+  };
+
   // Fetch all products
   const fetchProducts = useCallback(async () => {
     try {
@@ -39,9 +59,10 @@ const AdminPanel = () => {
   }, [apiId]);
 
   useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
-
+    if (isAuthenticated) {
+      fetchProducts();
+    }
+  }, [fetchProducts, isAuthenticated]);
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -76,6 +97,7 @@ const AdminPanel = () => {
       stock: 0,
       rating: 0,
       ratingCount: 0,
+      affiliate: '',
       images: ['', '', '']
     });
     setEditingProduct(null);
@@ -116,6 +138,7 @@ const AdminPanel = () => {
       stock: product.stock,
       rating: product.rating || 0,
       ratingCount: product.ratingCount || 0,
+      affiliate: product.affiliate || '',
       images: [...product.images, '', ''].slice(0, 3)
     });
   };
@@ -135,6 +158,36 @@ const AdminPanel = () => {
       }
     }
   };
+  if (!isAuthenticated) {
+    return (
+      <div className="ap-login__container">
+        <div className="ap-login__card">
+          <div className="ap-login__header">
+            <h1 className="ap-login__title">Admin Panel Login</h1>
+          </div>
+          {showPasswordField && (
+            <form onSubmit={handlePasswordSubmit} className="ap-login__form">
+              <div className="ap-login__form-group">
+                <label className="ap-login__label">Password</label>
+                <input
+                  type="password"
+                  className="ap-login__input"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  placeholder='Enter Admin Password'
+                />
+              </div>
+              <button type="submit" className="ap-login__submit-btn">
+                Login
+              </button>
+              {error && <div className="ap-login__error">{error}</div>}
+            </form>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   if (isLoading) return <div className="admin-loading">Loading...</div>;
   if (error) return <div className="admin-error">Error: {error}</div>;
@@ -177,13 +230,25 @@ const AdminPanel = () => {
           <div className="form-row">
             <div className="form-group">
               <label>Category</label>
-              <input
-                type="text"
+              <select
                 name="category"
                 value={formData.category}
                 onChange={handleInputChange}
                 required
-              />
+              >
+                <option value="">Select a category</option>
+                {categories.map((cat) => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+              </select>
+              {formData.category === 'Other' && (
+                <input
+                  type="text"
+                  name="customCategory"
+                  placeholder="Enter custom category"
+                  onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                />
+              )}
             </div>
 
             <div className="form-group">
@@ -286,6 +351,16 @@ const AdminPanel = () => {
                 min="0"
               />
             </div>
+
+            <div className="form-group">
+              <label>Affiliate Link</label>
+              <input
+                type="text"
+                name="affiliate"
+                value={formData.affiliate}
+                onChange={handleInputChange}
+              />
+            </div>
           </div>
 
           <div className="form-group">
@@ -356,8 +431,7 @@ const AdminPanel = () => {
                     </button>
                     <button
                       onClick={() => handleDelete(product._id)}
-                      className="delete-btn"
-                    >
+                      className="delete-btn">
                       Delete
                     </button>
                   </td>

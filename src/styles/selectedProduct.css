@@ -22,8 +22,9 @@
 }
 
 .product-detail-breadcrumb a {
-  color: #6e8efb;
+  color: #0038f0;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .product-detail-breadcrumb a:hover {
@@ -131,19 +132,18 @@
   gap: 0.3rem;
 }
 
-.product-detail-rating span {
-  color: #ffc107;
-  font-size: 1.1rem;
-}
-
-.product-detail-rating .filled {
-  color: #ffc107;
+.rating{
+  background-color: green;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
 }
 
 .product-detail-review-count {
-  color: #666;
+  color: #6d6d6d;
   font-size: 0.9rem;
   margin-left: 0.5rem;
+  font-weight: bold;
 }
 
 .product-detail-availability .in-stock {
@@ -172,7 +172,7 @@
 .product-detail-current-price {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #2e7d32;
+  color: #00878c;
 }
 
 .product-detail-description {
@@ -249,7 +249,7 @@
   flex: 1;
   min-width: 200px;
   padding: 10px;
-  background: #317700;
+  background: #360012;
   color: white;
   border: none;
   border-radius: 4px;
@@ -261,7 +261,7 @@
 }
 
 .product-detail-add-to-cart:hover {
-  background: #5a7df4;
+  background: #000000;
 }
 
 .product-detail-add-to-cart:disabled {

@@ -4,7 +4,6 @@ import '../styles/selectedProduct.css';
 
 const SelectedProduct = () => {
   const [selectedImage, setSelectedImage] = useState(0);
-  const [quantity, setQuantity] = useState(1);
   const location = useLocation();
   const product = location.state?.product;
 
@@ -52,15 +51,9 @@ const SelectedProduct = () => {
           
           <div className="product-detail-meta">
             <div className="product-detail-rating">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className={i < Math.ceil(product.rating || 0) ? 'filled' : ''}>
-                  {i < (product.rating || 0) ? '★' : '☆'}
-                </span>
-              ))}
-              <p style={product.rating>=4?{color:'green'}:{color:'red'}}>{product.rating}</p>
+              <p style={product.rating>=4?{backgroundColor:'green'}:{backgroundColor:'red'}} className='rating'><span>★ </span>{product.rating}</p>
               <span className="product-detail-review-count">({product.ratingCount || 0} reviews)</span>
             </div>
-            
             <div className="product-detail-availability">
               {product.stock > 0 ? (
                 <span className="in-stock">In Stock ({product.stock} available)</span>
@@ -94,22 +87,8 @@ const SelectedProduct = () => {
           )}
 
           <div className="product-detail-actions">
-            <div className="product-detail-quantity">
-              <button 
-                onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                disabled={quantity <= 1}
-              >
-                −
-              </button>
-              <span>{quantity}</span>
-              <button 
-                onClick={() => setQuantity(prev => prev + 1)}
-                disabled={product.stock > 0 && quantity >= product.stock}>
-                +
-              </button>
-            </div>
-            
-            <a href='https://www.meesho.com/?srsltid=AfmBOop3uf9yk5LeZwaSwMECdsU_E1xmWwk2ailoWm7GdhMsfBYGQjn-'
+           
+            <a href={product.affiliate || ''}
                className="product-detail-add-to-cart"
                disabled={product.stock <= 0}>
               {product.stock > 0 ? 'Buy Now' : 'Notify Me'}

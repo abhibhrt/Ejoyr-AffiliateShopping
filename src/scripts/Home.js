@@ -45,7 +45,7 @@ export default function Home({ products }) {
               <div className="fet-product-info">
                 <h3>{product.title}</h3>
                 <p>{product.description.slice(0, 50)}...</p>
-                <span className="fet-price">₹{product.price * (1 - (product.discount || 0) / 100)}</span>
+                <span className="fet-price">₹{parseInt(product.price * (1 - (product.discount || 0) / 100))}</span>
               </div>
               <NavLink to={`/products/${product.id}`} state={{ product }} className="fet-buy-now">Buy Now</NavLink>
             </div>

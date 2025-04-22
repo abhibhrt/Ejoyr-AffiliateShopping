@@ -56,18 +56,16 @@ const SelectedProduct = () => {
             </div>
             <div className="product-detail-availability">
               {product.stock > 0 ? (
-                <span className="in-stock">In Stock ({product.stock} available)</span>
-              ) : (
-                <span className="out-of-stock">Out of Stock</span>
+                <span className="in-stock">In Stock</span> ) : (<span className="out-of-stock">Out of Stock</span>
               )}
             </div>
           </div>
 
           <div className="product-detail-price">
             {product.discount > 0 && (
-              <span className="product-detail-original-price">₹{product.price.toFixed(2)}</span>
+              <span className="product-detail-original-price">₹{Math.ceil(product.price)}</span>
             )}
-            <span className="product-detail-current-price">₹{discountedPrice.toFixed(2)}</span>
+            <span className="product-detail-current-price">₹{Math.ceil(discountedPrice)}</span>
           </div>
 
           <div className="product-detail-description">
@@ -91,7 +89,7 @@ const SelectedProduct = () => {
             <a href={product.affiliate || ''}
                className="product-detail-add-to-cart"
                disabled={product.stock <= 0}>
-              {product.stock > 0 ? 'Buy Now' : 'Notify Me'}
+              {product.stock > 0 ? 'Get Now' : 'Notify Me'}
             </a>
             
             {/* <button className="product-detail-wishlist">

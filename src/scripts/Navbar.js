@@ -7,7 +7,6 @@ const Navbar = () => {
   const [categoryOpen, setCategoryOpen] = useState(false);
   const navRef = useRef(null);
 
-  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -42,8 +41,7 @@ const Navbar = () => {
         {/* Mobile menu toggle */}
         <div 
           className={`hamburger ${menuOpen ? "open" : ""}`} 
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+          onClick={() => setMenuOpen(!menuOpen)} >
           <span></span>
           <span></span>
           <span></span>
@@ -52,13 +50,12 @@ const Navbar = () => {
         {/* Navigation Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li><NavLink to="/" className="nav-link">Home</NavLink></li>
-
+          <li><NavLink className='nav-link' to='/products'>Collections</NavLink></li>
           {/* Category Dropdown */}
           <li className="dropdown">
             <div 
               className="dropdown-toggle"
-              onClick={() => setCategoryOpen(!categoryOpen)}
-            >
+              onClick={() => setCategoryOpen(!categoryOpen)}  >
               <span>Categories</span>
               <svg className={`chevron ${categoryOpen ? "open" : ""}`} viewBox="0 0 24 24">
                 <path d="M7 10l5 5 5-5z" />
@@ -69,12 +66,6 @@ const Navbar = () => {
               <li><a href="#electronics">Electronics</a></li>
               <li><a href="#home">Home Decor</a></li>
             </ul>
-          </li>
-          <li><NavLink className='nav-link' to='/products'>Collections</NavLink></li>
-          <li>
-            <NavLink to="/adminpanel" className="nav-link">
-              Admin
-            </NavLink>
           </li>
         </ul>
       </div>

@@ -165,7 +165,8 @@ const ProductCard = ({ product }) => {
           loading="lazy"
         />
         <div className="product-actions">
-          <Link to={`/products/${product._id}`} state={{ product }} className="quick-view">Buy Now</Link>
+          <Link to={`/products/${product._id}`} state={{ product }} className="quick-view">Quick View</Link>
+          <a href={product.affiliate} target='_blank' rel="noreferrer" className='quick-view' style={{backgroundColor: 'purple'}}>Get Now</a>
         </div>
       </div>
       <div className="product-info">
@@ -183,9 +184,9 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="product-price">
           {product.discount > 0 && (
-            <span className="original-price">₹{product.price.toFixed(2)}</span>
+            <span className="original-price">₹{Math.ceil(product.price)}</span>
           )}
-          <span className="current-price">₹{discountedPrice.toFixed(2)}</span>
+          <span className="current-price">₹{Math.ceil(discountedPrice)}</span>
         </div>
       </div>
     </div>

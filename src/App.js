@@ -10,8 +10,7 @@ import Navbar from './scripts/Navbar';
 import Footer from './scripts/Footer';
 import Product from './scripts/selectedProduct';
 import ProductPage from './scripts/AllProducts';
-import AdminPanel from './scripts/AdminPanel';
-import ScrollToTop from './scripts/scrollToTop'; // 👈 Import it
+import ScrollToTop from './scripts/scrollToTop';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -30,7 +29,7 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop /> {/* 👈 Add here */}
+      <ScrollToTop />
       <div className="body-container">
         <Navbar />
         <Routes>
@@ -42,7 +41,6 @@ function App() {
           />
           <Route path="/products" element={<ProductPage products={products} />} />
           <Route path="/products/:productId" element={<Product />} />
-          <Route path="/adminpanel" element={<AdminPanel />} />
         </Routes>
         <Footer />
       </div>

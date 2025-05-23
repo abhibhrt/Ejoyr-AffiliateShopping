@@ -4,23 +4,8 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [categoryOpen, setCategoryOpen] = useState(false);
   const navRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setCategoryOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  // Close mobile menu when resizing to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -34,43 +19,23 @@ const Navbar = () => {
 
   return (
     <>
-    <nav className="navbar" ref={navRef}>
-      <div className="nav-container">
-        <h1 className="logo">Ejoyr</h1>
-
-        {/* Mobile menu toggle */}
-        <div 
-          className={`hamburger ${menuOpen ? "open" : ""}`} 
-          onClick={() => setMenuOpen(!menuOpen)} >
-          <span></span>
-          <span></span>
-          <span></span>
+      <nav className="navbar" ref={navRef}>
+        <div className="nav-container">
+          <h1 className="logo">Ejoyr</h1>
+          <div
+            className={`hamburger ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)} >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+            <li><NavLink to="/" className="nav-link">Home</NavLink></li>
+            <li><NavLink className='nav-link' to='/products'>Collections</NavLink></li>
+          </ul>
         </div>
-
-        {/* Navigation Links */}
-        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <li><NavLink to="/" className="nav-link">Home</NavLink></li>
-          <li><NavLink className='nav-link' to='/products'>Collections</NavLink></li>
-          {/* Category Dropdown */}
-          <li className="dropdown">
-            <div 
-              className="dropdown-toggle"
-              onClick={() => setCategoryOpen(!categoryOpen)}  >
-              <span>Categories</span>
-              <svg className={`chevron ${categoryOpen ? "open" : ""}`} viewBox="0 0 24 24">
-                <path d="M7 10l5 5 5-5z" />
-              </svg>
-            </div>
-            <ul className={`dropdown-menu ${categoryOpen ? "show" : ""}`}>
-              <li><a href="#men">Fashion</a></li>
-              <li><a href="#electronics">Electronics</a></li>
-              <li><a href="#home">Home Decor</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div className="forspace">.</div>
+      </nav>
+      <div className="forspace">.</div>
     </>
   );
 };

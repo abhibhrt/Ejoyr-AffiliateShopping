@@ -115,6 +115,7 @@
   }
   
   /* ========== Featured Products Section ========== */
+
   .fet-best-products {
     text-align: center;
     padding: 80px 20px;
@@ -141,12 +142,14 @@
   }
   
   .fet-product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #e6004c; */
   }
   
   .fet-product-card {
@@ -157,6 +160,7 @@
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    max-width: 300px;
   }
   
   .fet-product-card:hover {

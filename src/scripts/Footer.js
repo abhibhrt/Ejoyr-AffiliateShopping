@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/footer.css";
 
 export default function Footer() {
-  return ( 
+  return (
     <footer className="footer">
       <div className="footer-container">
         {/* Left Section - About */}
@@ -26,10 +26,10 @@ export default function Footer() {
         <div className="footer-social">
           <h3>Follow Us</h3>
           <div className="social-media center">
-            <a href="https://www.facebook.com/" className="fa-brands fa-facebook"> </a>
-            <a href="https://www.linkedin.com/" className="fa-brands fa-linkedin"> </a>
-            <a href="https://github.com/" className="fa-brands fa-github"> </a>
-            <a href="https://x.com/" className="fa-brands fa-x-twitter"> </a>
+            <a href="https://www.facebook.com/profile.php?id=61574006632071" className="fa-brands fa-facebook"> </a>
+            <a href="https://www.instagram.com/teamejoyr/" className="fa-brands fa-instagram"> </a>
+            <a href="https://t.me/teamejoyr" className="fa-brands fa-telegram"> </a>
+            <a href="https://x.com/TeamEjoyr" className='fa-brands fa-x-twitter'> </a>
           </div>
         </div>
       </div>

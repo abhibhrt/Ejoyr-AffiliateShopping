@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import '../styles/allProducts.css';
 
 const ProductsPage = ({products}) => {
-
   // Extract unique categories from products data
   const uniqueCategories = [...new Set(products.map(product => product.category))].map(category => ({
     id: category.toLowerCase(),
@@ -48,12 +47,11 @@ const ProductsPage = ({products}) => {
   });
 
   return (
-    <div className="products-page">
+    <div className="products-page" id='products'>
       {/* Hero Section */}
       <div className="products-hero">
         <div className="hero-content">
-          <h1>{selectedCategory === 'all' ? 'Our Products' : categories.find(c => c.id === selectedCategory)?.name}</h1>
-          <p>Discover amazing products at unbeatable prices</p>
+          <h2>{selectedCategory === 'all' ? 'All Products' : categories.find(c => c.id === selectedCategory)?.name}</h2>
         </div>
       </div>
 
@@ -151,9 +149,10 @@ const ProductsPage = ({products}) => {
 
 const ProductCard = ({ product }) => {
   const discountedPrice = product.price * (1 - (product.discount || 0) / 100);
+   const navigate = useNavigate(); 
 
   return (
-    <div className="product-card">
+    <div className="product-card" >
       <div className="product-badge">
         {product.featured && <span className="featured-badge">Featured</span>}
         {product.discount > 0 && <span className="discount-badge">-{product.discount}%</span>}
@@ -163,14 +162,13 @@ const ProductCard = ({ product }) => {
           src={product.images[0]}
           alt={product.title}
           loading="lazy"
+          onClick={() => {
+            navigate(`/products/${product._id}`);
+          }}
         />
-        <div className="product-actions">
-          <Link to={`/products/${product._id}`} state={{ product }} className="quick-view">Quick View</Link>
-          <a href={product.affiliate} target='_blank' rel="noreferrer" className='quick-view' style={{backgroundColor: 'purple'}}>Get Now</a>
-        </div>
       </div>
       <div className="product-info">
-        <h3 className="product-name">{product.title}</h3>
+        <Link to={`/products/${product._id}`} state={{ product }} className="product-name">{product.title.slice(0, 20)}...</Link>
         <div className="product-category">
           {product.brand && `${product.brand} • `}{product.category}
         </div>

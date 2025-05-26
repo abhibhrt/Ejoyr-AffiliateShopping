@@ -368,7 +368,7 @@
   
   @media (max-width: 768px) {
     .section-home {
-      padding: 80px 5%;
+      padding: 100px 5%;
     }
   
     .home-left h1 {
@@ -386,9 +386,6 @@
   }
   
   @media (max-width: 480px) {
-    .section-home {
-      padding: 60px 5%;
-    }
   
     .home-left h1 {
       font-size: 1.8rem;

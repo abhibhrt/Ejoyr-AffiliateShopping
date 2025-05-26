@@ -9,7 +9,6 @@ import Home from './scripts/Home';
 import Navbar from './scripts/Navbar';
 import Footer from './scripts/Footer';
 import Product from './scripts/selectedProduct';
-import ProductPage from './scripts/AllProducts';
 import ScrollToTop from './scripts/scrollToTop';
 
 function App() {
@@ -33,13 +32,7 @@ function App() {
       <div className="body-container">
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home products={products.sort(() => 0.5 - Math.random()).slice(0, 3)} />
-            }
-          />
-          <Route path="/products" element={<ProductPage products={products} />} />
+          <Route path="/" element={<Home products={products} />}/>
           <Route path="/products/:productId" element={<Product />} />
         </Routes>
         <Footer />

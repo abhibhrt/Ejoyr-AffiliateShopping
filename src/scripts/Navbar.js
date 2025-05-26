@@ -18,7 +18,6 @@ const Navbar = () => {
   }, []);
 
   return (
-    <>
       <nav className="navbar" ref={navRef}>
         <div className="nav-container">
           <h1 className="logo">Ejoyr</h1>
@@ -31,12 +30,10 @@ const Navbar = () => {
           </div>
           <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
             <li><NavLink to="/" className="nav-link">Home</NavLink></li>
-            <li><NavLink className='nav-link' to='/products'>Collections</NavLink></li>
+            <li><a className='nav-link' href='#products'>Shop Now</a></li>
           </ul>
         </div>
       </nav>
-      <div className="forspace">.</div>
-    </>
   );
 };
 

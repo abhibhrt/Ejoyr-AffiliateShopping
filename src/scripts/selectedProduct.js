@@ -1,33 +1,76 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/selectedProduct.css';
 
 const SelectedProduct = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const location = useLocation();
-  const product = location.state?.product;
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!product) {
-    return <div className="product-detail-error">Product not found</div>;
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const fet = await fetch(`${process.env.REACT_APP_API}/api${location.pathname}`);
+        if (fet.status === 200) {
+          const data = await fet.json();
+          setProduct(data);
+        } else {
+          setProduct(null);
+        }
+      } catch (err) {
+        console.log(err);
+        setProduct(null);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, [location.pathname]);
+
+  if (loading) {
+    return (
+      <div className="product-loading-container">
+        <div className="product-loading-spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p className="product-loading-text">Loading Product Details...</p>
+      </div>
+    );
   }
 
-  const discountedPrice = product.price * (1 - (product.discount || 0) / 100);
+  if (!product) {
+    return (
+      <div className="productNotFoundContainer">
+        <i className="fas fa-search productNotFoundIcon"></i>
+        <h2 className="productNotFoundTitle">Product Not Found</h2>
+        <p className="productNotFoundMessage">
+          We couldn't find the product you're looking for.
+          It might be unavailable or the ID might be incorrect.
+        </p>
+        <Link
+          className="productNotFoundButton"
+          to="/products">
+          Back to Products
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="product-detail-container">
-      {/* Breadcrumb Navigation */}
       <div className="product-detail-breadcrumb">
-        <Link to="/">Home</Link> / <Link to="/products">Products</Link> / <span>{product.title}</span>
+        <Link to="/">Home</Link> / <span>{product.title}</span>
       </div>
-
-      {/* Main Product Content */}
       <div className="product-detail-content">
-        {/* Product Images */}
         <div className="product-detail-images">
           <div className="product-detail-main-image">
-            <img 
-              src={product.images[selectedImage]} 
-              alt={product.title} 
+            <img
+              src={product.images[selectedImage]}
+              alt={product.title}
               className="product-detail-img"
             />
             {product.discount > 0 && (
@@ -37,42 +80,36 @@ const SelectedProduct = () => {
           <div className="product-detail-thumbnails">
             {product.images.map((img, index) => (
               img && <div key={index}
-              className={`product-detail-thumbnail ${selectedImage === index ? 'active' : ''}`}
-              onClick={() => setSelectedImage(index)}>
-              <img src={img} alt={`${product.title} thumbnail ${index}`} />
+                className={`product-detail-thumbnail ${selectedImage === index ? 'active' : ''}`}
+                onClick={() => setSelectedImage(index)}>
+                <img src={img} alt={`${product.title} thumbnail ${index}`} />
               </div>
             ))}
           </div>
         </div>
-
-        {/* Product Info */}
         <div className="product-detail-info">
           <h1 className="product-detail-title">{product.title}</h1>
-          
           <div className="product-detail-meta">
             <div className="product-detail-rating">
-              <p style={product.rating>=4?{backgroundColor:'green'}:{backgroundColor:'red'}} className='rating'><span>★ </span>{product.rating}</p>
+              <p style={product.rating >= 4 ? { backgroundColor: 'green' } : { backgroundColor: 'red' }} className='rating'><span>★ </span>{product.rating}</p>
               <span className="product-detail-review-count">({product.ratingCount || 0} reviews)</span>
             </div>
             <div className="product-detail-availability">
               {product.stock > 0 ? (
-                <span className="in-stock">In Stock</span> ) : (<span className="out-of-stock">Out of Stock</span>
+                <span className="in-stock">In Stock</span>) : (<span className="out-of-stock">Out of Stock</span>
               )}
             </div>
           </div>
-
           <div className="product-detail-price">
             {product.discount > 0 && (
               <span className="product-detail-original-price">₹{Math.ceil(product.price)}</span>
             )}
-            <span className="product-detail-current-price">₹{Math.ceil(discountedPrice)}</span>
+            <span className="product-detail-current-price">₹{Math.ceil(product.price * (1 - (product.discount || 0) / 100))}</span>
           </div>
-
           <div className="product-detail-description">
             <h3>Description</h3>
             <p>{product.description}</p>
           </div>
-
           {product.specification && (
             <div className="product-detail-specs">
               <h3>Specifications</h3>
@@ -83,20 +120,13 @@ const SelectedProduct = () => {
               </ul>
             </div>
           )}
-
           <div className="product-detail-actions">
-           
             <a href={product.affiliate || ''}
-               className="product-detail-add-to-cart"
-               disabled={product.stock <= 0}>
+              className="product-detail-add-to-cart"
+              disabled={product.stock <= 0}>
               {product.stock > 0 ? 'Get Now' : 'Notify Me'}
             </a>
-            
-            {/* <button className="product-detail-wishlist">
-              ♡ Add to Wishlist
-            </button> */}
           </div>
-
           <div className="product-detail-meta-footer">
             <div className="product-detail-category">
               <span>Category:</span> {product.category}

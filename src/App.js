@@ -30,7 +30,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="body-container">
-        <Navbar />
+        <Navbar products={products} />
         <Routes>
           <Route path="/" element={<Home products={products} />}/>
           <Route path="/products/:productId" element={<Product />} />

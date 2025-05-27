@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import '../styles/allProducts.css';
 
-const ProductsPage = ({products}) => {
+const ProductsPage = ({ products }) => {
   // Extract unique categories from products data
   const uniqueCategories = [...new Set(products.map(product => product.category))].map(category => ({
     id: category.toLowerCase(),
@@ -48,13 +48,6 @@ const ProductsPage = ({products}) => {
 
   return (
     <div className="products-page" id='products'>
-      {/* Hero Section */}
-      <div className="products-hero">
-        <div className="hero-content">
-          <h2>{selectedCategory === 'all' ? 'All Products' : categories.find(c => c.id === selectedCategory)?.name}</h2>
-        </div>
-      </div>
-
       {/* Main Content */}
       <div className="products-container">
         {/* Filters Sidebar - Desktop */}
@@ -149,7 +142,7 @@ const ProductsPage = ({products}) => {
 
 const ProductCard = ({ product }) => {
   const discountedPrice = product.price * (1 - (product.discount || 0) / 100);
-   const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   return (
     <div className="product-card" >
@@ -173,11 +166,13 @@ const ProductCard = ({ product }) => {
           {product.brand && `${product.brand} • `}{product.category}
         </div>
         <div className="product-rating">
-          {[...Array(5)].map((_, i) => (
-            <span key={i} className={i < Math.floor(product.rating || 0) ? 'filled' : ''}>
-              {i < (product.rating || 0) ? '★' : '☆'}
-            </span>
-          ))}
+          <div>
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className={i < Math.floor(product.rating || 0) ? 'filled' : ''}>
+                {i < (product.rating || 0) ? '★' : '☆'}
+              </span>
+            ))}
+          </div>
           <span className="review-count">({product.ratingCount || 0})</span>
         </div>
         <div className="product-price">

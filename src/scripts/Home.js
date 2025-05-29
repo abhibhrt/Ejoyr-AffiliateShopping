@@ -44,7 +44,7 @@ export default function Home({ products = [] }) {
           >
             {products.map((product, index) => (
               <div key={product._id} className="slide">
-                <Link to={`/products/${product._id}`}>
+                <Link to={`/products/${product._id}`} style={{textDecoration:"none"}}>
                   <div className="product-card">
                     <div className="product-badge">
                       {product.discount > 0 && (
@@ -76,13 +76,13 @@ export default function Home({ products = [] }) {
             className="slider-nav prev"
             onClick={() => setCurrentSlide(prev => prev === 0 ? products.length - 1 : prev - 1)}
           >
-            &lt;
+            &#11160;
           </button>
           <button 
             className="slider-nav next"
             onClick={() => setCurrentSlide(prev => prev === products.length - 1 ? 0 : prev + 1)}
           >
-            &gt;
+            &#11162;
           </button>
           <div className="slider-dots">
             {products.slice(0, 5).map((_, index) => (

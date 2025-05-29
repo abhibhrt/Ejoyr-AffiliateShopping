@@ -57,7 +57,7 @@ export default function Home({ products = [] }) {
                       className="product-image slider-image"
                     />
                     <div className="product-info">
-                      <h3>{product.title}</h3>
+                      <h3>{product.title}</h3> 
                       <div className="price">
                         {product.discount > 0 && (
                           <span className="original-price">₹{product.price}</span>
@@ -76,13 +76,13 @@ export default function Home({ products = [] }) {
             className="slider-nav prev"
             onClick={() => setCurrentSlide(prev => prev === 0 ? products.length - 1 : prev - 1)}
           >
-            &#11160;
+            &#8249;
           </button>
           <button 
             className="slider-nav next"
             onClick={() => setCurrentSlide(prev => prev === products.length - 1 ? 0 : prev + 1)}
           >
-            &#11162;
+            &#8250;
           </button>
           <div className="slider-dots">
             {products.slice(0, 5).map((_, index) => (

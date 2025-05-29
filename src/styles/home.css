@@ -342,7 +342,7 @@
     min-width: 100%;
   }
 
-  .product-image
+  .product-image,
   .slider-image {
     height: 250px;
   }

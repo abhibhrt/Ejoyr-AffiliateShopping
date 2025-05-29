@@ -54,7 +54,7 @@ export default function Home({ products = [] }) {
                     <img 
                       src={product.images?.[0] || 'https://via.placeholder.com/300'} 
                       alt={product.title} 
-                      className="product-image"
+                      className="product-image slider-image"
                     />
                     <div className="product-info">
                       <h3>{product.title}</h3>

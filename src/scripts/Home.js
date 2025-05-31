@@ -60,10 +60,10 @@ export default function Home({ products = [] }) {
                       <h3>{product.title}</h3> 
                       <div className="price">
                         {product.discount > 0 && (
-                          <span className="original-price">₹{product.price}</span>
+                          <span className="original-price">₹{Math.ceil(product.price / (1 - (product.discount || 0) / 100))}</span>
                         )}
                         <span className="current-price">
-                          ₹{Math.ceil(product.price * (1 - (product.discount || 0) / 100))}
+                          ₹{Math.ceil(product.price)}
                         </span>
                       </div>
                     </div>

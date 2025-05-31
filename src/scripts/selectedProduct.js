@@ -95,16 +95,14 @@ const SelectedProduct = () => {
               <span className="product-detail-review-count">({product.ratingCount || 0} reviews)</span>
             </div>
             <div className="product-detail-availability">
-              {product.stock > 0 ? (
-                <span className="in-stock">In Stock</span>) : (<span className="out-of-stock">Out of Stock</span>
-              )}
+              { product.stock > 0 ? product.stock===1? (<span className="few-stock">Only Few In Stock</span>) : (<span className="in-stock">In Stock</span>) : (<span className="out-of-stock">Out of Stock</span>) }
             </div>
           </div>
           <div className="product-detail-price">
             {product.discount > 0 && (
-              <span className="product-detail-original-price">₹{Math.ceil(product.price)}</span>
+              <span className="product-detail-original-price">₹{Math.ceil(product.price / (1 - (product.discount || 0) / 100))}</span>
             )}
-            <span className="product-detail-current-price">₹{Math.ceil(product.price * (1 - (product.discount || 0) / 100))}</span>
+            <span className="product-detail-current-price">₹{Math.ceil(product.price)}</span>
           </div>
           <div className="product-detail-description">
             <h3>Description</h3>
@@ -123,8 +121,9 @@ const SelectedProduct = () => {
           <div className="product-detail-actions">
             <a href={product.affiliate || ''}
               className="product-detail-add-to-cart"
-              disabled={product.stock <= 0}>
-              {product.stock > 0 ? 'Get Now' : 'Notify Me'}
+              disabled={product.stock <= 0}
+              style={{backgroundColor: product.stock > 0 ? product.stock===1? '#FFA500' : '#006400' : '#800000'}}>
+              {product.stock > 0 ? product.stock===1? 'Hurry Up' : 'Get Now' : 'Notify Me'}
             </a>
           </div>
           <div className="product-detail-meta-footer">
@@ -134,11 +133,6 @@ const SelectedProduct = () => {
             <div className="product-detail-brand">
               <span>Brand:</span> {product.brand}
             </div>
-            {product.supplier && (
-              <div className="product-detail-supplier">
-                <span>Supplier:</span> {product.supplier}
-              </div>
-            )}
           </div>
         </div>
       </div>

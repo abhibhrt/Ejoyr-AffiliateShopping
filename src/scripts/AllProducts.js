@@ -141,7 +141,7 @@ const ProductsPage = ({ products }) => {
 };
 
 const ProductCard = ({ product }) => {
-  const discountedPrice = product.price * (1 - (product.discount || 0) / 100);
+  const fakePrice = product.price / (1 - (product.discount || 0) / 100);
   const navigate = useNavigate();
 
   return (
@@ -177,9 +177,9 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="product-price">
           {product.discount > 0 && (
-            <span className="original-price">₹{Math.ceil(product.price)}</span>
+            <span className="original-price">₹{Math.ceil(fakePrice)}</span>
           )}
-          <span className="current-price">₹{Math.ceil(discountedPrice)}</span>
+          <span className="current-price">₹{Math.ceil(product.price)}</span>
         </div>
       </div>
     </div>

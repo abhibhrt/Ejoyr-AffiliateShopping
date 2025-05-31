@@ -259,7 +259,10 @@
   color: #4caf50;
   font-weight: 500;
 }
-
+.product-detail-availability .few-stock{
+  color:#e6b000;
+  font-weight: 500;
+}
 .product-detail-availability .out-of-stock {
   color: #f44336;
   font-weight: 500;

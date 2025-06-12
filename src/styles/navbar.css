@@ -25,11 +25,6 @@
   margin: 0;
   text-decoration: none;
 }
-.logo>p{
-  color: grey;
-  font-weight: lighter;
-  font-size: 15px;
-}
 
 .nav-links {
   display: flex;

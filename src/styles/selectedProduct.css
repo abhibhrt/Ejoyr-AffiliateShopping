@@ -380,6 +380,7 @@
 @media (max-width: 768px) {
   .product-detail-container {
     padding: 1rem;
+    padding-top: 80px;
   }
 
   .product-detail-title {
@@ -411,4 +412,20 @@
 
 .product-detail-content {
   animation: fadeIn 0.5s ease-out;
+}
+
+.approve-base ul{
+  font-size: large;
+}
+.approve-base li{
+  color: #e6b000;
+}
+.approve-base a{
+  text-decoration: none;
+  color: #3bbeff;
+}
+
+.button-navigate{
+  color: #e6b000;
+  text-decoration: none;
 }

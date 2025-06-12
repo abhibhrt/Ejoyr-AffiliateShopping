@@ -72,6 +72,7 @@ const SelectedProduct = () => {
               src={product.images[selectedImage]}
               alt={product.title}
               className="product-detail-img"
+              title='Image Credit: Amazon.in'
             />
             {product.discount > 0 && (
               <span className="product-detail-discount-badge">-{product.discount}%</span>
@@ -82,7 +83,7 @@ const SelectedProduct = () => {
               img && <div key={index}
                 className={`product-detail-thumbnail ${selectedImage === index ? 'active' : ''}`}
                 onClick={() => setSelectedImage(index)}>
-                <img src={img} alt={`${product.title} thumbnail ${index}`} />
+                <img src={img} alt={`${product.title} thumbnail ${index}`} title='Image Credit: Amazon.in' />
               </div>
             ))}
           </div>
@@ -90,20 +91,30 @@ const SelectedProduct = () => {
         <div className="product-detail-info">
           <h1 className="product-detail-title">{product.title}</h1>
           <div className="product-detail-meta">
-            <div className="product-detail-rating">
+            {/* <div className="product-detail-rating">
               <p style={product.rating >= 4 ? { backgroundColor: 'green' } : { backgroundColor: 'red' }} className='rating'><span>★ </span>{product.rating}</p>
               <span className="product-detail-review-count">({product.ratingCount || 0} reviews)</span>
+            </div> */}
+            <div className='approve-base'>
+              <ul>
+                <li>latest price</li>
+                <li>latest ratings</li>
+                <li>latest reviews</li>
+                on Amazon: <a href={product.affiliate} target="_blank" rel="noreferrer">
+                click here
+              </a>
+              </ul>
             </div>
-            <div className="product-detail-availability">
-              { product.stock > 0 ? product.stock===1? (<span className="few-stock">Only Few In Stock</span>) : (<span className="in-stock">In Stock</span>) : (<span className="out-of-stock">Out of Stock</span>) }
-            </div>
+            {/* <div className="product-detail-availability">
+              {product.stock > 0 ? product.stock === 1 ? (<span className="few-stock">Only Few In Stock</span>) : (<span className="in-stock">In Stock</span>) : (<span className="out-of-stock">Out of Stock</span>)}
+            </div> */}
           </div>
-          <div className="product-detail-price">
+          {/* <div className="product-detail-price">
             {product.discount > 0 && (
               <span className="product-detail-original-price">₹{Math.ceil(product.price / (1 - (product.discount || 0) / 100))}</span>
             )}
             <span className="product-detail-current-price">₹{Math.ceil(product.price)}</span>
-          </div>
+          </div> */}
           <div className="product-detail-description">
             <h3>Description</h3>
             <p>{product.description}</p>
@@ -122,9 +133,11 @@ const SelectedProduct = () => {
             <a href={product.affiliate || ''}
               className="product-detail-add-to-cart"
               disabled={product.stock <= 0}
-              style={{backgroundColor: product.stock > 0 ? product.stock===1? '#FFA500' : '#006400' : '#800000'}}>
-              {product.stock > 0 ? product.stock===1? 'Hurry Up' : 'Get From Amazon' : 'Notify Me'}
+              style={{ backgroundColor: product.stock > 0 ? product.stock === 1 ? '#FFA500' : '#006400' : '#800000' }}>
+              {product.stock > 0 ? product.stock === 1 ? 'Hurry Up' : 'Get From Amazon' : 'Notify Me'}
             </a>
+            <br /><br />
+            <p>As an Amazon Associate, I earn from qualifying purchases</p>
           </div>
           <div className="product-detail-meta-footer">
             <div className="product-detail-category">

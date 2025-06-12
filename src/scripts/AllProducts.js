@@ -56,8 +56,7 @@ const ProductsPage = ({ products }) => {
             <h3>Filters</h3>
             <button
               className="close-filters"
-              onClick={() => setMobileFiltersOpen(false)}
-            >
+              onClick={() => setMobileFiltersOpen(false)}>
               &times;
             </button>
           </div>
@@ -95,8 +94,7 @@ const ProductsPage = ({ products }) => {
           <div className="products-toolbar">
             <button
               className="mobile-filters-btn"
-              onClick={() => setMobileFiltersOpen(true)}
-            >
+              onClick={() => setMobileFiltersOpen(true)}>
               Filters
             </button>
             <div className="sort-options">
@@ -141,7 +139,7 @@ const ProductsPage = ({ products }) => {
 };
 
 const ProductCard = ({ product }) => {
-  const fakePrice = product.price / (1 - (product.discount || 0) / 100);
+  // const fakePrice = product.price / (1 - (product.discount || 0) / 100);
   const navigate = useNavigate();
 
   return (
@@ -153,6 +151,7 @@ const ProductCard = ({ product }) => {
       <div className="product-image">
         <img
           src={product.images[0]}
+          title='Image Credit: Amazon.in'
           alt={product.title}
           loading="lazy"
           onClick={() => {
@@ -165,7 +164,7 @@ const ProductCard = ({ product }) => {
         <div className="product-category">
           {product.brand && `${product.brand} • `}{product.category}
         </div>
-        <div className="product-rating">
+        {/* <div className="product-rating">
           <div>
             {[...Array(5)].map((_, i) => (
               <span key={i} className={i < Math.floor(product.rating || 0) ? 'filled' : ''}>
@@ -174,13 +173,14 @@ const ProductCard = ({ product }) => {
             ))}
           </div>
           <span className="review-count">({product.ratingCount || 0})</span>
-        </div>
-        <div className="product-price">
+        </div> */}
+        {/* <div className="product-price">
           {product.discount > 0 && (
             <span className="original-price">₹{Math.ceil(fakePrice)}</span>
           )}
           <span className="current-price">₹{Math.ceil(product.price)}</span>
-        </div>
+        </div> */}
+        <Link className='button-navigate' to={`products/${product._id}`}>Check Details</Link>
       </div>
     </div>
   );

@@ -58,8 +58,8 @@ const Navbar = ({ products }) => {
   return (
     <nav className="navbar" ref={navRef}>
       <div className="nav-container">
-        <NavLink to="/" className="logo">Ejoyr
-        <p>As an Amazon Associate, I earn from qualifying purchases</p>
+        <NavLink to="/" className="logo">
+        Ejoyr
         </NavLink>
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}

@@ -54,18 +54,19 @@ export default function Home({ products = [] }) {
                     <img 
                       src={product.images?.[0] || 'https://via.placeholder.com/300'} 
                       alt={product.title} 
+                      title='Image Credit: Amazon.in'
                       className="product-image slider-image"
                     />
                     <div className="product-info">
                       <h3>{product.title}</h3> 
-                      <div className="price">
+                      {/* <div className="price">
                         {product.discount > 0 && (
                           <span className="original-price">₹{Math.ceil(product.price / (1 - (product.discount || 0) / 100))}</span>
                         )}
                         <span className="current-price">
                           ₹{Math.ceil(product.price)}
                         </span>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </Link>

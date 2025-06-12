@@ -123,7 +123,7 @@ const SelectedProduct = () => {
               className="product-detail-add-to-cart"
               disabled={product.stock <= 0}
               style={{backgroundColor: product.stock > 0 ? product.stock===1? '#FFA500' : '#006400' : '#800000'}}>
-              {product.stock > 0 ? product.stock===1? 'Hurry Up' : 'Get Now' : 'Notify Me'}
+              {product.stock > 0 ? product.stock===1? 'Hurry Up' : 'Get From Amazon' : 'Notify Me'}
             </a>
           </div>
           <div className="product-detail-meta-footer">

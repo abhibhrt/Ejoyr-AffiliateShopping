@@ -25,7 +25,7 @@ export default function Home({ products = [] }) {
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">Welcome to <span className="brand-name">Ejoyr</span></h1>
-          <p className="hero-subtitle">Discover premium products at unbeatable prices</p>
+          <p className="hero-subtitle">As an Amazon Associate, I earn from qualifying purchases</p>
           <a href="#products" className="hero-cta">Shop Now</a>
         </div>
       </div>
